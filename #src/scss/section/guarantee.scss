@@ -1,0 +1,102 @@
+.guarantee {
+	background-color: #f2f1ff;
+	&__wrapper {
+		padding-top: 105px;
+	}
+
+	&__title {
+		margin-bottom: 62px;
+	}
+
+	&__cards-guarantee {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -15px;
+		
+	}
+}
+
+
+.cards-guarantee {
+
+	&__item {
+		flex: 0 1 29%;
+		flex: 0 1 calc(33.333% - 30px);
+		margin: 0 15px;
+		padding: 50px 95px 60px 100px;
+		box-shadow: 0 45px 40px rgba(195, 201, 236, 0.3);
+		border-radius: 6px;
+		background-color: #ffffff;
+		position: relative;
+		span{
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			overflow: hidden;
+			&:after{
+				content: '01';
+				position: absolute;
+				display: block;
+				opacity: 0.1;
+				color: #1b191c;
+				font-size: 80px;
+				font-weight: 700;
+				line-height: 28px;
+				top: 60px;
+				left: -24px
+			}
+		}
+		&:nth-child(2) {
+			span {
+				&:after{
+					content: '02'
+				}
+			}
+			&:after{
+				background: url('../img/guarantee/2.png') center / cover no-repeat;
+			}
+		}
+		&:last-child {
+			span {
+				&:after{
+					content: '03'
+				}
+			}
+			&:after{
+				background: url('../img/guarantee/3.png') center / cover no-repeat;
+			}
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			display: block;
+			width: 165px;
+			height: 165px;
+			bottom: -37px;
+    		right: -17px;
+			background: url('../img/guarantee/1.png') center / cover no-repeat;
+		}
+	}
+
+	&__title {
+		color: #ef453f;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: 0.4px;
+		margin-bottom: 15px;
+	}
+
+	&__descr {
+		opacity: 0.9;
+		color: #212122;
+		font-family: Montserrat;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px;
+	}
+}

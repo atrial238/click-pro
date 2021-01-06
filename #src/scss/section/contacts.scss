@@ -1,0 +1,44 @@
+.contacts {
+	padding: 80px 0 130px 0;
+	background-color: #f2f1ff;
+	&__wrapper {
+	}
+
+	&__title {
+		margin-bottom: 57px;
+	}
+
+	&__content {
+		position: relative;
+		box-shadow: 0 45px 40px rgba(195, 201, 236, 0.2);
+		border-radius: 6px;
+		background-color: #ffffff;
+		padding: 53px 530px 55px 230px;
+	}
+
+	&__descr {
+		opacity: 0.9;
+		color: #1b191c;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 34px;
+		margin-bottom: 31px;
+	}
+
+	&__btn {
+		display: inline-block;
+		padding: 17px 87px 17px 87px;
+	}
+
+	&__img {
+		position: absolute;
+		top: auto;
+		left: auto;
+		right: 254px;
+		bottom: 0px;
+	}
+}
+
+
+
+
