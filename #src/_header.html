@@ -5,20 +5,25 @@
 				<img src="img/icons/header/logo.svg" alt="logo" class="header__img">
 				<div class="header__text">
 					<div class="header__title">Click-<span>pro</span> </div>
-					<div class="header__descr">Эффективное скликивание рекламы</div>
+					<div class="header__descr">Эффективное скликивание<span> рекламы</span> </div>
 				</div>
 			</a>
-			<a href="#" class="header__btn _btn">
+			<a href="#" class="header__btn _btn btn-no-hl">
 				<span>Оставить заявку</span>
 			</a>
+			<div class="header__open-nav btn-no-hl">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 		<nav class="header__nav nav ">
 			<ul class="nav__wrapper">
-				<li><a href="#" class="nav__link">Как это работает</a></li>
-				<li><a href="#" class="nav__link">Контакты</a></li>
-				<li><a href="#" class="nav__link">Гарантии</a></li>
-				<li><a href="#" class="nav__link">Стоимость</a></li>
-				<li><a href="#" class="nav__link">Отзывы</a></li>
+				<li><a href="#" class="nav__link btn-no-hl">Как это работает</a></li>
+				<li><a href="#" class="nav__link btn-no-hl">Контакты</a></li>
+				<li><a href="#" class="nav__link btn-no-hl">Гарантии</a></li>
+				<li><a href="#" class="nav__link btn-no-hl">Стоимость</a></li>
+				<li><a href="#" class="nav__link btn-no-hl">Отзывы</a></li>
 			</ul>
 			<div class="nav__mobile">
 				<a class="nav__btn _btn"><span>Telegram</span></a>
@@ -26,24 +31,30 @@
 				<img src="img/icons/header/logo.svg" alt="logo" class="header__img">
 				<div class="header__text">
 					<div class="header__title">Click-<span>pro</span> </div>
-					<div class="header__descr">Эффективное скликивание рекламы</div>
+					<div class="header__descr">Эффективное скликивание</div>
 				</div>
 			</a>
 			<a href="#" class="nav__policy">Политика конфиденциальности</a>
+			<div class="nav__close btn-no-hl"></div>
 			</div>
 		</nav>
+		<div class="nav__overlay"></div>
 		<div class="header__offer offer">
 			<div class="offer__wrapper">
-				<h1 class="offer__title title">
+				<h1 class="offer__title ">
 					Скликивание конкурентов<br>
 					в  Google ADS и Yandex Direct
 
 				</h1>
 				<div class="offer__descr">
-					Устраним ваших конкурентов за 1 день<br>
-					и повысим эффективность вашей рекламы
+					<span>Устраним ваших конкурентов</span>
+					 <span> за 1 день и повысим </span>
+					<span>эффективность вашей рекламы</span> 
 				</div>
-				<a href="" class="offer__btn _btn _btn_red">
+				<div class="offer__logos img-bg">
+					<img src="img/header/bg-logos-mob.png" alt="logos">
+				</div>
+				<a href="" class="offer__btn _btn _btn_red btn-no-hl">
 					<span>Консультация в Telegram</span>
 				</a>
 			</div>
@@ -66,9 +77,16 @@
 			<div class="header__bg-logos img-bg">
 				<img src="img/header/bg-logos.png" alt="logos">
 			</div>
+			
 		</div>
 	</div>
 	<div class="header__bg img-bg">
-		<img src="img/header/bg.jpg" alt="background">
+		<picture>
+			<source media="(max-width: 767px)" srcset="img/header/bg_mob.jpg">
+			<source media="(min-width: 768px)" srcset="img/header/bg.jpg">
+			<img src="img/header/bg.jpg" alt="background">
+		</picture>
+	
+		
 	</div>
 </header>

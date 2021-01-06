@@ -38,7 +38,7 @@ $md5: 479.98;
 body {
 	color: #000;
 	font-size: 14px;
-
+background-color: grey;
 	&._lock {
 		height: 100%;
 		overflow: hidden;
@@ -72,9 +72,14 @@ body {
 		max-width: 950px;
 	}
 	@media (max-width: $md3+px) {
-		max-width: 720px;
-		// max-width: none;
-		// padding: 0 10px;
+		max-width: none;
+		padding: 0 30px;
+	}
+	@media (max-width: $md4+px) {
+		padding: 0 20px;
+	}
+	@media (max-width: $md5+px) {
+		padding: 0 10px;
 	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -91,7 +96,7 @@ body {
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 @import "elements/button";
-// @import "elements/title";
+@import "elements/title";
 @import "elements/form/inputs";
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
@@ -102,7 +107,7 @@ body {
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 @import 'section/header';
-// @import 'section/';
+@import 'section/about';
 // @import 'section/';
 // @import 'section/';
 // @import 'section/';

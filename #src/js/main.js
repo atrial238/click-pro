@@ -12,10 +12,12 @@ import testWebp from './files/isSupportWebp';
 // import maskForNumberPhone from './files/maskForNumberPhone';
 // import {smoothScrolling} from './files/scrolling';
 // import footer from './files/footer';
+import {header} from './files/header';
 
 		
 	ibg();
 	testWebp();
+	header();
 	// tabs();
 	// slider();
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');

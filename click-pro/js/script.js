@@ -86,6 +86,53 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./#src/js/files/header.js":
+/*!*********************************!*\
+  !*** ./#src/js/files/header.js ***!
+  \*********************************/
+/*! exports provided: header, menuOverlay, menu */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "header", function() { return header; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuOverlay", function() { return menuOverlay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menu", function() { return menu; });
+const menuOverlay = document.querySelector('.nav__overlay'),
+		menu = document.querySelector('.header__nav');
+	
+function header (){
+
+	const menuClose = document.querySelector('.nav__close'),
+			menuActive = document.querySelector('.header__open-nav'),
+			widthScroll =  window.innerWidth - document.documentElement.clientWidth;
+			
+	menuClose.addEventListener('click', () => {
+		menuOverlay.classList.remove('nav__overlay_active');
+		menu.classList.remove('header__nav_active');
+		document.body.classList.remove('_lock');
+		document.body.style.paddingRight ='';
+	});
+	
+	menuActive.addEventListener('click', () => {
+		
+		menuOverlay.classList.add('nav__overlay_active');
+		menu.classList.add('header__nav_active');
+		document.body.classList.add('_lock');
+		document.body.style.paddingRight = widthScroll  + 'px';
+	});
+
+	window.addEventListener('resize', () => {
+		menuOverlay.classList.remove('nav__overlay_active');
+		menu.classList.remove('header__nav_active');
+		document.body.classList.remove('_lock');
+		document.body.style.paddingRight ='';
+	});
+}
+
+
+/***/ }),
+
 /***/ "./#src/js/files/imageToBackground.js":
 /*!********************************************!*\
   !*** ./#src/js/files/imageToBackground.js ***!
@@ -186,6 +233,7 @@ function testWebp () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./files/imageToBackground */ "./#src/js/files/imageToBackground.js");
 /* harmony import */ var _files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./files/isSupportWebp */ "./#src/js/files/isSupportWebp.js");
+/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
 
 
 
@@ -201,9 +249,11 @@ __webpack_require__.r(__webpack_exports__);
 // import {smoothScrolling} from './files/scrolling';
 // import footer from './files/footer';
 
+
 		
 	Object(_files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__["default"])();
 	Object(_files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__["default"])();
+	Object(_files_header__WEBPACK_IMPORTED_MODULE_2__["header"])();
 	// tabs();
 	// slider();
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
