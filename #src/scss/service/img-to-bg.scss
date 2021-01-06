@@ -1,0 +1,11 @@
+.img-bg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	left: 0;
+	top: 0;
+	z-index: 1;
+		img{
+			object-fit: cover;
+		}
+}
