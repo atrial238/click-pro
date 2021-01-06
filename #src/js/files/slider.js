@@ -1,13 +1,16 @@
-import tns from '../libs/tiny-slider';
+
 
 function slider () {
 
 	let slider = tns({
-		container: '.carousel__inner',
+		container: '.slider',
 		items: 1,
 		slideBy: 1,
-		// center: true,
-		// mouseDrag: true,
+		center: true,
+		mouseDrag: true,
+		gutter: 100
+		
+		
 		// prevButton: '.carousel__btn-prev',
 		// nextButton: '.carousel__btn-next',
 	 });

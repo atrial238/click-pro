@@ -4,7 +4,7 @@ import ibg from './files/imageToBackground';
 import testWebp from './files/isSupportWebp';
 // import initMap from './files/map';
 // import tabs from './files/tabs';
-// import {slider} from './files/tiny-slider';
+import {slider} from './files/slider';
 // import modals from './files/modal';
 // import catalog from './files/catalog';
 // import align from './files/alignTitle';
@@ -13,13 +13,14 @@ import testWebp from './files/isSupportWebp';
 // import {smoothScrolling} from './files/scrolling';
 // import footer from './files/footer';
 import {header} from './files/header';
+import alignHeigthCard from './files/sliderAlign';
 
 		
 	ibg();
 	testWebp();
 	header();
-	// tabs();
-	// slider();
+	alignHeigthCard();
+	slider();
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
 	// modals('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	// catalog();

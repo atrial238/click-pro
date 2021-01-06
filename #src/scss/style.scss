@@ -88,7 +88,7 @@ background-color: grey;
 
 @import "service/img-to-bg";
 // @import 'service/fade';
-// @import 'service/tiny-slider';
+@import 'service/tiny-slider';
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
@@ -100,7 +100,6 @@ background-color: grey;
 @import "elements/form/inputs";
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
-	
 	flex: 1 1 auto;
 }
 //===================================================================================================================================
@@ -112,7 +111,7 @@ background-color: grey;
 @import 'section/contacts';
 @import 'section/inform';
 @import 'section/guarantee';
-// @import 'section/';
-// @import 'section/';
+@import 'section/cost';
+@import 'section/feedback';
 // @import 'section/';
 // @import 'section/';

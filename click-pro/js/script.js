@@ -222,6 +222,67 @@ function testWebp () {
 
 /***/ }),
 
+/***/ "./#src/js/files/slider.js":
+/*!*********************************!*\
+  !*** ./#src/js/files/slider.js ***!
+  \*********************************/
+/*! exports provided: slider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "slider", function() { return slider; });
+
+
+function slider () {
+
+	let slider = tns({
+		container: '.slider',
+		items: 1,
+		slideBy: 1,
+		center: true,
+		mouseDrag: true,
+		gutter: 100
+		
+		
+		// prevButton: '.carousel__btn-prev',
+		// nextButton: '.carousel__btn-next',
+	 });
+}
+
+
+
+/***/ }),
+
+/***/ "./#src/js/files/sliderAlign.js":
+/*!**************************************!*\
+  !*** ./#src/js/files/sliderAlign.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function alignHeigthCard () {
+	const cards= document.querySelectorAll('.card-slide'),
+			arrHeightCards = [];
+	let maxHeightCard;
+
+cards.forEach(card => {
+	arrHeightCards.push(card.clientHeight);
+});
+
+maxHeightCard = Math.max.apply(null, arrHeightCards)
+
+cards.forEach(card => {
+	card.style.height = maxHeightCard + 'px';
+});
+
+}
+/* harmony default export */ __webpack_exports__["default"] = (alignHeigthCard);
+
+/***/ }),
+
 /***/ "./#src/js/main.js":
 /*!*************************!*\
   !*** ./#src/js/main.js ***!
@@ -233,14 +294,16 @@ function testWebp () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./files/imageToBackground */ "./#src/js/files/imageToBackground.js");
 /* harmony import */ var _files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./files/isSupportWebp */ "./#src/js/files/isSupportWebp.js");
-/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
+/* harmony import */ var _files_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./files/slider */ "./#src/js/files/slider.js");
+/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
+/* harmony import */ var _files_sliderAlign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./files/sliderAlign */ "./#src/js/files/sliderAlign.js");
 
 
 
 
 // import initMap from './files/map';
 // import tabs from './files/tabs';
-// import {slider} from './files/tiny-slider';
+
 // import modals from './files/modal';
 // import catalog from './files/catalog';
 // import align from './files/alignTitle';
@@ -250,12 +313,13 @@ __webpack_require__.r(__webpack_exports__);
 // import footer from './files/footer';
 
 
+
 		
 	Object(_files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__["default"])();
 	Object(_files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__["default"])();
-	Object(_files_header__WEBPACK_IMPORTED_MODULE_2__["header"])();
-	// tabs();
-	// slider();
+	Object(_files_header__WEBPACK_IMPORTED_MODULE_3__["header"])();
+	Object(_files_sliderAlign__WEBPACK_IMPORTED_MODULE_4__["default"])();
+	Object(_files_slider__WEBPACK_IMPORTED_MODULE_2__["slider"])();
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
 	// modals('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	// catalog();
