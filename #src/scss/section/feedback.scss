@@ -6,14 +6,18 @@
 	}
 	&__wrapper {
 		padding-top: 175px;
-
 	}
 
 	&__title {
-		padding-bottom: 80px;
+		padding-bottom: 82px;
+		margin-left: 30px;
 	}
 
 	&__slider {
+		position: relative;
+		
+	}
+	&__arrows {
 		
 	}
 }
@@ -91,7 +95,6 @@
 		font-weight: 500;
 		line-height: 24px;
 		margin-bottom: 15px;
-		
 	}
 
 	&__stars {
@@ -124,7 +127,64 @@
 		opacity: 0.3;
 	}
 }
+
+
+.arrows {
+
+	&__right {
+		right: 50px;
+	}
+
+	&__left {
+		left: -50px;
+	}
+}
+
+.arrows {
+
+	&__arrow {
+		position: absolute;
+		top: 46%;
+		transform: translateY(-50%);
+		width: 36px;
+		height: 25px;
+		cursor: pointer;
+		img {
+			width: 100%;
+		}
+		&_right {
+			right: -50px;
+		}
+
+		&_left {
+			transform: translateY(-50%) rotate(180deg);
+			left: -50px;
+		}
+	}
+}
 .tns-item{
 	display: inline-flex !important;
 	padding-bottom: 50px;
+}
+.tns-nav{
+	display: flex;
+	height: 4px;
+	border-radius: 2px;
+	background-color: rgba(27, 25, 28, 0.2);
+	width: 15%;
+	margin: 0 auto;
+	transform: translateY(-43px);
+	
+	button {
+		height: 4px;
+		flex: 1 1 100%;
+		border-radius: 2px;
+		background-color: rgba(27, 25, 28, -0.8);
+	}
+}
+.tns-nav-active{
+	background-color: rgba(242, 72, 65, 1) !important;
+}
+.tns-outer > button{
+display: none;
 }

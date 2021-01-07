@@ -1824,7 +1824,12 @@ textarea.input {
 }
 
 .feedback__title {
-  padding-bottom: 80px;
+  padding-bottom: 82px;
+  margin-left: 30px;
+}
+
+.feedback__slider {
+  position: relative;
 }
 
 .slider__slide {
@@ -1919,9 +1924,64 @@ textarea.input {
   opacity: 0.3;
 }
 
+.arrows__right {
+  right: 50px;
+}
+
+.arrows__left {
+  left: -50px;
+}
+
+.arrows__arrow {
+  position: absolute;
+  top: 46%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.arrows__arrow img {
+  width: 100%;
+}
+
+.arrows__arrow_right {
+  right: -50px;
+}
+
+.arrows__arrow_left {
+  transform: translateY(-50%) rotate(180deg);
+  left: -50px;
+}
+
 .tns-item {
   display: inline-flex !important;
   padding-bottom: 50px;
+}
+
+.tns-nav {
+  display: flex;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(27, 25, 28, 0.2);
+  width: 15%;
+  margin: 0 auto;
+  transform: translateY(-43px);
+}
+
+.tns-nav button {
+  height: 4px;
+  flex: 1 1 100%;
+  border-radius: 2px;
+  background-color: rgba(27, 25, 28, 0);
+}
+
+.tns-nav-active {
+  background-color: #f24841 !important;
+}
+
+.tns-outer > button {
+  display: none;
 }
 
 ._webp ._btn_red:before { background: url(../img/header/plane.webp) center center/cover no-repeat; }

@@ -237,16 +237,18 @@ __webpack_require__.r(__webpack_exports__);
 function slider () {
 
 	let slider = tns({
-		container: '.slider',
+		container: '.slider__wrapper',
 		items: 1,
 		slideBy: 1,
 		center: true,
 		mouseDrag: true,
-		gutter: 100
-		
-		
-		// prevButton: '.carousel__btn-prev',
-		// nextButton: '.carousel__btn-next',
+		gutter: 100,
+		prevButton: '.arrows__arrow_left',
+		nextButton: '.arrows__arrow_right',
+		navPosition: 'bottom',
+		autoplay: true,
+		autoplayTimeout: 3000,
+		autoplayHoverPause: true,
 	 });
 }
 
@@ -272,7 +274,7 @@ cards.forEach(card => {
 	arrHeightCards.push(card.clientHeight);
 });
 
-maxHeightCard = Math.max.apply(null, arrHeightCards) + 50;
+maxHeightCard = Math.max.apply(null, arrHeightCards) + 43;
 
 cards.forEach(card => {
 	card.style.height = maxHeightCard + 'px';
