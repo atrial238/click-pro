@@ -86,6 +86,73 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./#src/js/files/dynamicAdapt.js":
+/*!***************************************!*\
+  !*** ./#src/js/files/dynamicAdapt.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function dynamicAdapt (numbr) {
+	(function (arr) {
+	  arr.forEach(function (item) {
+		 if (item.hasOwnProperty('after')) {
+			return;
+		 }
+		 Object.defineProperty(item, 'after', {
+			configurable: true,
+			enumerable: true,
+			writable: true,
+			value: function after() {
+			  var argArr = Array.prototype.slice.call(arguments),
+				 docFrag = document.createDocumentFragment();
+	
+			  argArr.forEach(function (argItem) {
+				 var isNode = argItem instanceof Node;
+				 docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+			  });
+	
+			  this.parentNode.insertBefore(docFrag, this.nextSibling);
+			}
+		 });
+	  });
+	})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
+
+  const	setArr = document.querySelector(`[data-move${numbr}]`).dataset[`move${numbr}`].split(', '),
+		  moveableElem = document.querySelector(`[data-move${numbr}]`),
+		  moveToElemChildren = document.querySelector(`.${setArr[0]}`).children,
+		  anchorSibling = moveableElem.previousElementSibling,
+		  anchorParent = moveableElem.parentElement;
+
+  let widthWindowUser = document.documentElement.clientWidth;
+
+  function move () {
+  
+	  widthWindowUser = document.documentElement.clientWidth;
+	  
+	  if(widthWindowUser < setArr[2]) {
+
+		  if(moveToElemChildren.length < 1) {
+			  document.querySelector(`.${setArr[0]}`).appendChild(moveableElem);
+		  }else{
+			  moveToElemChildren[setArr[1] - 2].after(moveableElem);
+		  } 
+	  }else if(anchorSibling){
+		  anchorSibling.after(moveableElem); 
+	  }else if(anchorParent) {
+		  anchorParent.prepend(moveableElem);
+	  }
+  }
+	  window.addEventListener('resize', () => move());
+	  move ();
+}
+/* harmony default export */ __webpack_exports__["default"] = (dynamicAdapt);
+
+/***/ }),
+
 /***/ "./#src/js/files/header.js":
 /*!*********************************!*\
   !*** ./#src/js/files/header.js ***!
@@ -222,6 +289,39 @@ function testWebp () {
 
 /***/ }),
 
+/***/ "./#src/js/files/menuAlign.js":
+/*!************************************!*\
+  !*** ./#src/js/files/menuAlign.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function menuAlign () {
+
+	const menuItems = document.querySelectorAll('.nav__link'),
+			style =  window.getComputedStyle(document.querySelector('.nav__link')),
+			marginRightItems = parseInt(style.marginRight);
+
+	menuItems.forEach(item => {
+		const menuItemWidht = item.clientWidth;
+		item.addEventListener("mouseover", () => {
+			const currentmenuItemWidht = item.clientWidth,
+			differentWidth = currentmenuItemWidht - menuItemWidht;
+			item.style.marginRight = (marginRightItems - differentWidth ) + 'px';
+		});
+	});
+	menuItems.forEach(item => {
+		item.addEventListener("mouseout", () => {
+			item.style.marginRight = marginRightItems + 'px';
+		});
+	});
+}
+/* harmony default export */ __webpack_exports__["default"] = (menuAlign);
+
+/***/ }),
+
 /***/ "./#src/js/files/slider.js":
 /*!*********************************!*\
   !*** ./#src/js/files/slider.js ***!
@@ -285,6 +385,59 @@ cards.forEach(card => {
 
 /***/ }),
 
+/***/ "./#src/js/files/timer.js":
+/*!********************************!*\
+  !*** ./#src/js/files/timer.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function timer () {
+
+const minutes = document.querySelector('.timer__digit_minutes'),
+		seconds = document.querySelector('.timer__digit_seconds'),
+		minutesWrapperWidth = minutes.clientWidth,
+		secondswrapperwidth = seconds.clientWidth,
+		deadLine = 15 * 60 * 1000;
+
+let total = {},
+	timeleft = 0,
+	some = 30,
+	idTimeLeft = setInterval(setTimeLeft, 1000);
+
+  function addZero(num){
+		if(num < 10){
+			return '0' + num;
+		}else{
+			 return num;
+		}
+  }
+  function calculateTimeLeft() {
+		  timeleft += 1000;
+		  
+		let totalTime = deadLine - timeleft;
+
+		if(totalTime <= 0){
+			 clearInterval(idTimeLeft);
+			 totalTime = 0;
+		}
+		total = {
+			 seconds: totalTime/1000 % 60,
+			 minutes: Math.floor(totalTime/(1000 * 60) % 60)
+		};
+  }
+  function setTimeLeft (){
+		calculateTimeLeft();
+		minutes.textContent = addZero(total.minutes);
+		seconds.textContent = addZero(total.seconds);
+  }  
+}
+/* harmony default export */ __webpack_exports__["default"] = (timer);
+
+/***/ }),
+
 /***/ "./#src/js/main.js":
 /*!*************************!*\
   !*** ./#src/js/main.js ***!
@@ -297,8 +450,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./files/imageToBackground */ "./#src/js/files/imageToBackground.js");
 /* harmony import */ var _files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./files/isSupportWebp */ "./#src/js/files/isSupportWebp.js");
 /* harmony import */ var _files_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./files/slider */ "./#src/js/files/slider.js");
-/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
-/* harmony import */ var _files_sliderAlign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./files/sliderAlign */ "./#src/js/files/sliderAlign.js");
+/* harmony import */ var _files_timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./files/timer */ "./#src/js/files/timer.js");
+/* harmony import */ var _files_menuAlign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./files/menuAlign */ "./#src/js/files/menuAlign.js");
+/* harmony import */ var _files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./files/dynamicAdapt */ "./#src/js/files/dynamicAdapt.js");
+/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
+/* harmony import */ var _files_sliderAlign__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./files/sliderAlign */ "./#src/js/files/sliderAlign.js");
 
 
 
@@ -308,9 +464,9 @@ __webpack_require__.r(__webpack_exports__);
 
 // import modals from './files/modal';
 // import catalog from './files/catalog';
-// import align from './files/alignTitle';
-// import forms from './files/form';
-// import maskForNumberPhone from './files/maskForNumberPhone';
+
+
+
 // import {smoothScrolling} from './files/scrolling';
 // import footer from './files/footer';
 
@@ -319,9 +475,12 @@ __webpack_require__.r(__webpack_exports__);
 		
 	Object(_files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__["default"])();
 	Object(_files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__["default"])();
-	Object(_files_header__WEBPACK_IMPORTED_MODULE_3__["header"])();
-	Object(_files_sliderAlign__WEBPACK_IMPORTED_MODULE_4__["default"])();
+	Object(_files_header__WEBPACK_IMPORTED_MODULE_6__["header"])();
+	Object(_files_sliderAlign__WEBPACK_IMPORTED_MODULE_7__["default"])();
 	Object(_files_slider__WEBPACK_IMPORTED_MODULE_2__["slider"])();
+	Object(_files_timer__WEBPACK_IMPORTED_MODULE_3__["default"])();
+	Object(_files_menuAlign__WEBPACK_IMPORTED_MODULE_4__["default"]) ();
+	Object(_files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__["default"])(1);
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
 	// modals('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	// catalog();

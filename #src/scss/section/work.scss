@@ -1,11 +1,17 @@
 .work {
 	padding-top: 86px;
 	background-color: #f2f1ff;
+	@media (max-width: $md4+px) {
+		padding-top: 10px;
+	}
 	&__wrapper {
 	}
 
 	&__title {
 		padding-bottom: 57px;
+		@media (max-width: $md4+px) {
+			padding-bottom: 7px;
+		}
 	}
 
 	&__cards-work {
@@ -23,6 +29,14 @@
 			border-bottom: 1px solid rgba(33, 33, 34, 0.5);
 			.item-work {
 				padding-bottom: 50px;
+				@media (max-width: $md5+px) {
+				 padding-bottom: 24px;
+				}
+			}
+			@media (max-width: $md1+px) {
+				border-bottom: 0;
+				flex-direction: column;
+				align-items: start;
 			}
 		}
 		&_one{
@@ -52,6 +66,35 @@
 			bottom: 0px;
 			background-color: #212122;
 			opacity: 0.5;
+			@media (max-width: $md1+px) {
+			  display: none;
+			}
+		}
+		
+		@media (max-width: $md1+px) {
+		  max-width: 50%;
+		}
+		@media (max-width: $md2+px) {
+			max-width: 55%;
+		}
+		@media (max-width: $md3+px) {
+			max-width: 65%;
+			justify-content: flex-start;
+		}
+		@media (max-width: $md4+px) {
+			flex-direction: column;
+			max-width: 75%;
+		}
+		@media (max-width: $md5+px) {
+			max-width: 100%;
+		}
+		&_two{
+			@media (max-width: $md1+px) {
+				align-self: flex-end;
+			}
+			@media (max-width: $md5+px) {
+			 max-width: 80%;
+			}
 		}
 	}
 }
@@ -59,12 +102,21 @@
 
 	&__wrapper {
 		flex: 0 1 65%;
+		@media (max-width: $md3+px) {
+		  padding-right: 10px;
+		}
+		@media (max-width: $md4+px) {
+		 order: 2;
+		}
 	}
 
 	&__title {
 		display: flex;
 		margin-bottom: 17px;
 		align-items: center;
+		@media (max-width: $md5+px) {
+		 margin-bottom: 5px;
+		}
 	}
 
 	&__digit {
@@ -73,6 +125,13 @@
 		font-weight: 600;
 		line-height: 24px;
 		margin-right: 20px;
+		@media (max-width: $md4+px) {
+			margin-right: 10px;
+		}
+		@media (max-width: $md5+px) {
+			font-size: 25px;
+		}
+		
 	}
 
 	&__text {
@@ -80,6 +139,10 @@
 		font-size: 18px;
 		font-weight: 600;
 		line-height: 24px;
+		@media (max-width: $md5+px) {
+			font-size: 14px;
+			line-height: 20px;
+		}
 	}
 
 	&__descr {
@@ -87,11 +150,26 @@
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 24px;
+		@media (max-width: $md5+px) {
+			font-size: 12px;
+			line-height: 20px;
+		}
+		
 	}
 
 	&__img {
 		display: block;
 		flex: 0 1 30%;
 		margin-right: 0px;
+		@media (max-width: $md4+px) {
+		 margin-bottom: 20px ;
+		}
+		@media (max-width: $md5+px) {
+			width: 120px;
+			margin-bottom: 9px ;
+		 img {
+			 width: 100%;
+		 }
+		}
 	}
 }

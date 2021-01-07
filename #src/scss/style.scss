@@ -7,7 +7,7 @@
 //&display=swap&subset=cyrillic-ext
 @import "service/fonts";
 //</Подключаем шрифты>=======================================================================================
-
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&display=swap');
 //<Иконочные шрифты>==========================================================================================
 //@import "icons";
 //</Иконочные шрифты>==========================================================================================
@@ -38,7 +38,6 @@ $md5: 479.98;
 body {
 	color: #000;
 	font-size: 14px;
-background-color: grey;
 	&._lock {
 		height: 100%;
 		overflow: hidden;
@@ -114,7 +113,7 @@ background-color: grey;
 @import 'section/cost';
 @import 'section/feedback';
 @import 'section/discount';
-// @import 'section/';
+@import 'section/footer';
 // @import 'section/';
 // @import 'section/';
 // @import 'section/';

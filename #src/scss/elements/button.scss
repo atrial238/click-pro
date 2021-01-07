@@ -5,6 +5,7 @@
 	border: 1px solid #ffffff;
 	position: relative;
 	z-index: 3;
+	transition: all 0.1s ease;
 	@media (max-width: $md2+px) {
 		padding: 14px 40px 14px 40px;
 	}
@@ -30,15 +31,17 @@
 		top: 50%;
 		left: 50%;
 		border-radius: 4px;
-		background: rgb(179, 9, 3);
-		transform: translate(-50%, -50%) scale(0);
+		// background: rgb(179, 9, 3);
+		transform: translate(-50%, -50%) scale(1);
 		transition: transform .3s ease;
 		z-index: 1;
+		
 	}
 	
 	@media (min-width: 1200px) {
 		&:hover {
 			&:after{
+				
 				transform: translate(-50%, -50%) scale(1);
 			}
 		}
@@ -97,6 +100,7 @@
 		@media (max-width: $md5+px) {
 			padding: 22px 40px 22px 40px;
 		}
+		
 	}
 	&_red-empty{
 		border-radius: 4px;
@@ -106,10 +110,15 @@
 		}
 		@media (min-width: 1200px) {
 			&:hover {
-				border: 1px solid #ffffff;
+				border: 1px solid #000;
+				box-shadow: 2px 2px 7px  rgba(0, 0, 0, 0.5);
 				span{
-					color: #fff;
+					color: #000;
 				}
+			}
+			&:active{
+				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+				transform: translate(2px, 2px);
 			}
 		}
 	}
