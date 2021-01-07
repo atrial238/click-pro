@@ -1541,6 +1541,7 @@ textarea.input {
 .inform__btn {
   display: inline-block;
   padding: 21px 47px 21px 40px;
+  position: relative;
 }
 
 .inform__btn:before {
@@ -1812,6 +1813,10 @@ textarea.input {
 .feedback {
   background-color: #f2f1ff;
   padding-bottom: 300px;
+}
+
+.feedback ._container {
+  max-width: 1600px;
 }
 
 .feedback__wrapper {

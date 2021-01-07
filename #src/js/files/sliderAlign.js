@@ -7,7 +7,7 @@ cards.forEach(card => {
 	arrHeightCards.push(card.clientHeight);
 });
 
-maxHeightCard = Math.max.apply(null, arrHeightCards)
+maxHeightCard = Math.max.apply(null, arrHeightCards) + 50;
 
 cards.forEach(card => {
 	card.style.height = maxHeightCard + 'px';
