@@ -6,15 +6,28 @@ function slider () {
 		container: '.slider__wrapper',
 		items: 1,
 		slideBy: 1,
-		center: true,
+		
 		mouseDrag: true,
-		gutter: 100,
+		
 		prevButton: '.arrows__arrow_left',
 		nextButton: '.arrows__arrow_right',
 		navPosition: 'bottom',
-		autoplay: true,
-		autoplayTimeout: 3000,
-		autoplayHoverPause: true,
+		// autoplay: true,
+		// autoplayTimeout: 5000,
+		// autoplayHoverPause: true,
+		responsive: {
+			1580: {
+			  items: 1,
+			  slideBy: 1,
+				center: true,
+				mouseDrag: true,
+			},
+			1200: {
+				items: 2,
+				slideBy: 1,
+				mouseDrag: true,
+			 }
+		 }
 	 });
 }
 

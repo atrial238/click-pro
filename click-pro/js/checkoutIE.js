@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', function()  {
 			// scriptIE = document.createElement('script'),
 			// fetchPolyfill = document.createElement('script'),
 			scriptMain = document.createElement('script'),
+			changeSlider =  document.createElement('script'),
+			tinySlider =  document.createElement('script'),
 			// footer = document.querySelector('.footer'),
 			// footerMbile = document.querySelector('.footer-mobile'),
 			ua = navigator.userAgent,
@@ -12,6 +14,9 @@ window.addEventListener('DOMContentLoaded', function()  {
 	// scriptIE.setAttribute('src', 'js/scriptIE.min.js');
 	
 	scriptMain.setAttribute('src', 'js/script.js');
+	tinySlider.setAttribute('src', 'js/tiny-slider.js');
+	changeSlider.setAttribute('src', 'js/changeSlider.js');
+
 	// fetchPolyfill.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/fetch/0.8.0/fetch.min.js');
 	// var isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
 
@@ -29,11 +34,17 @@ window.addEventListener('DOMContentLoaded', function()  {
 	// }else{
 	// 	mainBody.appendChild(scriptMain);
 	// }
-	mainBody.appendChild(scriptMain);
-});
-
 	
 
+	mainBody.appendChild(changeSlider);
 
+	changeSlider.onload = function() {
+		
+		mainBody.appendChild(tinySlider);
 
-
+		tinySlider.onload = function() {
+			mainBody.appendChild(scriptMain);
+		};
+	};
+	
+});

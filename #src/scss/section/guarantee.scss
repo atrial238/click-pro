@@ -2,16 +2,36 @@
 	background-color: #f2f1ff;
 	&__wrapper {
 		padding-top: 105px;
+		@media (max-width: $md2+px) {
+			padding-top: 80px;
+		}
+		@media (max-width: $md3+px) {
+			padding-top: 60px;
+		}
+		@media (max-width: $md4+px) {
+			padding-top: 36px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 62px;
+		@media (max-width: $md3+px) {
+			margin-bottom: 42px;
+		}
+		@media (max-width: $md5+px) {
+			margin-bottom: 16px;
+			line-height: 36px;
+		}
+
 	}
 
 	&__cards-guarantee {
 		display: flex;
 		justify-content: space-between;
 		margin: 0 -15px;
+		@media (max-width: $md1+px) {
+		  flex-wrap: wrap;
+		}
 		
 	}
 }
@@ -28,7 +48,7 @@
 		border-radius: 6px;
 		background-color: #ffffff;
 		position: relative;
-		span{
+		& > span{
 			position: absolute;
 			display: block;
 			width: 100%;
@@ -47,11 +67,20 @@
 				font-weight: 700;
 				line-height: 28px;
 				top: 60px;
-				left: -24px
+				left: -24px;
+				@media (max-width: $md2+px) {
+					font-size: 60px;
+					left: -17px;
+				}
+				@media (max-width: $md5+px) {
+					font-size: 50px;
+					left: auto;
+					right: 0;
+				}
 			}
 		}
 		&:nth-child(2) {
-			span {
+			& > span {
 				&:after{
 					content: '02'
 				}
@@ -61,7 +90,7 @@
 			}
 		}
 		&:last-child {
-			span {
+			& > span {
 				&:after{
 					content: '03'
 				}
@@ -79,6 +108,30 @@
 			bottom: -37px;
     		right: -17px;
 			background: url('../img/guarantee/1.png') center / cover no-repeat;
+			@media (max-width: $md4+px) {
+			 display: none;
+			}
+		}
+		@media (max-width: $md1+px) {
+			flex: 1 1 44%;
+			flex: 1 1 calc(50% - 30px);
+			margin-bottom: 45px;
+		}
+		@media (max-width: $md2+px) {
+			padding: 30px 95px 60px 70px;
+		}
+		@media (max-width: $md3+px) {
+			flex: 1 1 95%;
+			flex: 1 1 calc(100% - 30px);
+			padding: 30px 145px 60px 70px;
+		}
+		@media (max-width: $md4+px) {
+			padding: 30px 45px 60px 70px;
+			margin-bottom: 20px;
+		}
+		@media (max-width: $md5+px) {
+			padding: 28px 34px 22px 25px;
+			margin-bottom: 10px;
 		}
 	}
 
@@ -89,8 +142,12 @@
 		line-height: 24px;
 		letter-spacing: 0.4px;
 		margin-bottom: 15px;
+		@media (max-width: $md5+px) {
+			line-height: 24px;
+			font-size: 14px;
+			margin-bottom: 7px;
+		}
 	}
-
 	&__descr {
 		opacity: 0.9;
 		color: #212122;
@@ -98,5 +155,13 @@
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 24px;
+		@media (max-width: $md5+px) {
+			font-size: 12px;
+			line-height: 20px;
+			width: 90%;
+			span {
+				
+			}
+		}
 	}
 }

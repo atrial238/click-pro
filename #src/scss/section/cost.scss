@@ -2,17 +2,40 @@
 	background-color: #f2f1ff;
 	&__wrapper {
 		padding-top: 125px;
+		@media (max-width: $md1+px) {
+			padding-top: 105px;
+		}
+		@media (max-width: $md2+px) {
+			padding-top: 85px;
+		}
+		@media (max-width: $md3+px) {
+			padding-top: 55px;
+		}
+		@media (max-width: $md4+px) {
+			padding-top: 15px;
+		}
 	}
 
 	&__title {
 		margin-bottom: 114px;
+		@media (max-width: $md1+px) {
+			margin-bottom: 90px;
+		}
+		@media (max-width: $md2+px) {
+			margin-bottom: 60px;
+		}
+		@media (max-width: $md3+px) {
+			margin-bottom: 0px;
+		}
+		@media (max-width: $md4+px) {
+			margin-bottom: 0px;
+		}
 	}
 
 	&__content {
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
-		
 		position: relative;
 		&:after{
 			content: '';
@@ -24,28 +47,74 @@
 			left: -125px;
 			transform: translateY(-50%);
 			background: url('../img/cost/1.png') center / cover no-repeat;
+			@media (max-width: $md1+px) {
+				top: auto;
+				bottom: -40px;
+				transform: translateY(0);
+			}
+			@media (max-width: $md3+px) {
+				left: -50px;
+				width: 260px;
+				height: 158px;
+				bottom: -25px;
+			}
+			@media (max-width: $md4+px) {
+				left: -60px;
+			}
+			@media (max-width: $md5+px) {
+				width: 180px;
+				height: 108px;
+				left: -50px;
+			}
+		}
+		@media (max-width: $md1+px) {
+		  flex-direction: column;
+		  align-items: flex-start;
+		  justify-content: center;
+		  padding-left: 200px;
+		}
+		@media (max-width: $md4+px) {
+		   padding-left: 150px;
+		}
+		@media (max-width: $md5+px) {
+			padding-left: 90px;
 		}
 	}
 
 	&__value {
-		
 		color: #1b191c;
 		font-size: 30px;
 		font-weight: 500;
 		flex: 0 1 341px;
-		
 		span {
 			color: #f24841;
 			&:first-child {
 				padding-left: 16px;
 				font-size: 100px;
 				font-weight: 600;
+				@media (max-width: $md3+px) {
+					font-size: 50px;
+				}
 			}
 			&:last-child{
-				font-family: Montserrat;
 				font-size: 50px;
 				font-weight: 700;
+				@media (max-width: $md3+px) {
+					font-size: 36px;
+				}
+				@media (max-width: $md5+px) {
+					font-size: 20px;
+				}
 			}
+		}
+		@media (max-width: $md1+px) {
+			flex: 0 1 auto;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 20px;
+		}
+		@media (max-width: $md5+px) {
+			font-size: 16px;
 		}
 	}
 
@@ -60,6 +129,25 @@
 		text-align: center;
 		flex: 0 1 60%;
 		letter-spacing: 0.3px;
+		@media (max-width: $md1+px) {
+		  text-align: left;
+		  padding: 0 100px 0 0px;
+		  margin-left: 0px;
+		}
+		@media (max-width: $md2+px) {
+		   padding: 0 40px 0 0px;
+		}
+		@media (max-width: $md3+px) {
+		  font-size: 18px;
+		}
+		@media (max-width: $md4+px) {
+		 font-size: 16px;
+		}
+		@media (max-width: $md5+px) {
+		 font-size: 14px;
+		 line-height: 22px;
+		 padding: 0 0px 0 0px;
+		}
 	}
 }
 

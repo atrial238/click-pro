@@ -86,6 +86,21 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./#src/js/files/changeSlider.js":
+/*!***************************************!*\
+  !*** ./#src/js/files/changeSlider.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function changeSlider () {
+	const slides = document.querySelectorAll('.card-slide');
+	console.log(slides)
+}
+
+
+/***/ }),
+
 /***/ "./#src/js/files/dynamicAdapt.js":
 /*!***************************************!*\
   !*** ./#src/js/files/dynamicAdapt.js ***!
@@ -340,15 +355,28 @@ function slider () {
 		container: '.slider__wrapper',
 		items: 1,
 		slideBy: 1,
-		center: true,
+		
 		mouseDrag: true,
-		gutter: 100,
+		
 		prevButton: '.arrows__arrow_left',
 		nextButton: '.arrows__arrow_right',
 		navPosition: 'bottom',
-		autoplay: true,
-		autoplayTimeout: 3000,
-		autoplayHoverPause: true,
+		// autoplay: true,
+		// autoplayTimeout: 5000,
+		// autoplayHoverPause: true,
+		responsive: {
+			1580: {
+			  items: 1,
+			  slideBy: 1,
+				center: true,
+				mouseDrag: true,
+			},
+			1200: {
+				items: 2,
+				slideBy: 1,
+				mouseDrag: true,
+			 }
+		 }
 	 });
 }
 
@@ -370,15 +398,21 @@ function alignHeigthCard () {
 			arrHeightCards = [];
 	let maxHeightCard;
 
-cards.forEach(card => {
-	arrHeightCards.push(card.clientHeight);
-});
+	cards.forEach(card => {
+		arrHeightCards.push(card.clientHeight);
+	});
 
-maxHeightCard = Math.max.apply(null, arrHeightCards) + 43;
+	maxHeightCard = Math.max.apply(null, arrHeightCards) + 43;
 
-cards.forEach(card => {
-	card.style.height = maxHeightCard + 'px';
-});
+	if(window.innerWidth > 1580) {
+		cards.forEach(card => {
+			card.style.height = maxHeightCard + 'px';
+		});
+	}else{
+		cards.forEach(card => {
+			card.style.height = 'auto';
+		});
+	}
 
 }
 /* harmony default export */ __webpack_exports__["default"] = (alignHeigthCard);
@@ -453,8 +487,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _files_timer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./files/timer */ "./#src/js/files/timer.js");
 /* harmony import */ var _files_menuAlign__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./files/menuAlign */ "./#src/js/files/menuAlign.js");
 /* harmony import */ var _files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./files/dynamicAdapt */ "./#src/js/files/dynamicAdapt.js");
-/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
-/* harmony import */ var _files_sliderAlign__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./files/sliderAlign */ "./#src/js/files/sliderAlign.js");
+/* harmony import */ var _files_changeSlider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./files/changeSlider */ "./#src/js/files/changeSlider.js");
+/* harmony import */ var _files_changeSlider__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_files_changeSlider__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _files_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./files/header */ "./#src/js/files/header.js");
+/* harmony import */ var _files_sliderAlign__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./files/sliderAlign */ "./#src/js/files/sliderAlign.js");
 
 
 
@@ -462,25 +498,28 @@ __webpack_require__.r(__webpack_exports__);
 // import initMap from './files/map';
 // import tabs from './files/tabs';
 
-// import modals from './files/modal';
+// import swiper from './files/swiper';
 // import catalog from './files/catalog';
 
 
 
 // import {smoothScrolling} from './files/scrolling';
-// import footer from './files/footer';
+
 
 
 
 		
 	Object(_files_imageToBackground__WEBPACK_IMPORTED_MODULE_0__["default"])();
 	Object(_files_isSupportWebp__WEBPACK_IMPORTED_MODULE_1__["default"])();
-	Object(_files_header__WEBPACK_IMPORTED_MODULE_6__["header"])();
-	Object(_files_sliderAlign__WEBPACK_IMPORTED_MODULE_7__["default"])();
+	Object(_files_header__WEBPACK_IMPORTED_MODULE_7__["header"])();
+	Object(_files_sliderAlign__WEBPACK_IMPORTED_MODULE_8__["default"])();
 	Object(_files_slider__WEBPACK_IMPORTED_MODULE_2__["slider"])();
 	Object(_files_timer__WEBPACK_IMPORTED_MODULE_3__["default"])();
 	Object(_files_menuAlign__WEBPACK_IMPORTED_MODULE_4__["default"]) ();
+	// swiper();
 	Object(_files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__["default"])(1);
+	Object(_files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__["default"])(2);
+	Object(_files_dynamicAdapt__WEBPACK_IMPORTED_MODULE_5__["default"])(3);
 	// modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
 	// modals('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	// catalog();

@@ -1,6 +1,12 @@
 .work {
 	padding-top: 86px;
 	background-color: #f2f1ff;
+	@media (max-width: $md2+px) {
+		padding-top: 56px
+	}
+	@media (max-width: $md3+px) {
+		padding-top: 36px
+	}
 	@media (max-width: $md4+px) {
 		padding-top: 10px;
 	}

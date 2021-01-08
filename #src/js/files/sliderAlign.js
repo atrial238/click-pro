@@ -3,15 +3,21 @@ function alignHeigthCard () {
 			arrHeightCards = [];
 	let maxHeightCard;
 
-cards.forEach(card => {
-	arrHeightCards.push(card.clientHeight);
-});
+	cards.forEach(card => {
+		arrHeightCards.push(card.clientHeight);
+	});
 
-maxHeightCard = Math.max.apply(null, arrHeightCards) + 43;
+	maxHeightCard = Math.max.apply(null, arrHeightCards) + 43;
 
-cards.forEach(card => {
-	card.style.height = maxHeightCard + 'px';
-});
+	if(window.innerWidth > 1580) {
+		cards.forEach(card => {
+			card.style.height = maxHeightCard + 'px';
+		});
+	}else{
+		cards.forEach(card => {
+			card.style.height = 'auto';
+		});
+	}
 
 }
 export default alignHeigthCard ;

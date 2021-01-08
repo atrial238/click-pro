@@ -2,7 +2,16 @@
 
 	padding: 110px 0 75px 0;
 	background: url('../img/inform/bg.jpg') center / cover no-repeat;
-
+	@media (max-width: $md2+px) {
+		padding: 80px 0 75px 0;
+	}
+	@media (max-width: $md4+px) {
+		padding: 50px 0 55px 0;
+		background: url('../img/inform/bg-mob.jpg') center / cover no-repeat;
+	}
+	@media (max-width: $md5+px) {
+		padding: 35px 0 60px 0;
+	}
 	&__btn {
 		display: inline-block;
 		padding: 21px 47px 21px 40px;
@@ -54,7 +63,16 @@
 			left: auto;
 			right: -167px;
 			background: url('../img/inform/3.png') center  / cover no-repeat;
-
+			@media (max-width: $md4+px) {
+				background: url('../img/inform/5.png') center  / cover no-repeat;
+				width: 40px;
+				height: 58px;
+				top: -50px;
+				right: 0px;
+			}
+		}
+		@media (max-width: $md4+px) {
+		 display: block;
 		}
 	}
 
@@ -69,12 +87,38 @@
 			right: -112px;
 			bottom: -57px;
 			background: url('../img/inform/2.png') center / cover no-repeat;
+			@media (max-width: $md3+px) {
+				width: 185px;
+				height: 129px;
+			}
+			@media (max-width: $md4+px) {
+			 display: none;
+			}
+		}
+		@media (max-width: $md2+px) {
+		  flex: 0 1 70%;
+		  
 		}
 	}
 
 	&__title {
 		color: #ffffff;
 		margin-bottom: 22px;
+		@media (max-width: $md2+px) {
+		  font-size: 35px;
+		  line-height: 45px;
+		}
+		@media (max-width: $md4+px) {
+		   font-size: 30px;
+		}
+		@media (max-width: $md5+px) {
+			line-height: 36px;
+			margin-bottom: 20px;
+			font-size: 25px;
+			span {
+				display: none;
+			}
+		}
 	}
 
 	&__desr {
@@ -86,14 +130,31 @@
 		span {
 			display: block;
 		}
+		@media (max-width: $md5+px) {
+		 margin-bottom: 37px;
+		 line-height: 22px;
+		 font-size: 16px;
+		}
 	}
 
 	&__img {
 		img {
+			
 			position: relative;
 			top: -10px;
 			left: 30px;
 		}
+		@media (max-width: $md2+px) {
+		  flex: 0 1 30%;
+		}
+		@media (max-width: $md3+px) {
+		  img {
+			width: 100%;
+		  }
+		}
+		@media (max-width: $md4+px) {
+			display: none;
+		  }
 	}
 }
 

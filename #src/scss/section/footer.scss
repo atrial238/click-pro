@@ -4,10 +4,30 @@
 		padding: 81px 0 91px 0;
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: $md1+px) {
+			padding: 61px 0 61px 0;
+		}
+		@media (max-width: $md2+px) {
+			padding: 51px 0 51px 0;
+		}
+		@media (max-width: $md3+px) {
+			padding: 41px 15px 41px 15px;
+		}
+		@media (max-width: $md4+px) {
+		 display: block;
+		 padding: 50px 15px 51px 15px;
+		}
+
 	}
 
 	&__column {
 		flex: 0 1 25%;
+		@media (max-width: $md1+px) {
+			flex: 0 1 30%;
+		}
+		@media (max-width: $md2+px) {
+			flex: 0 1 50%;
+		}
 	}
 }
 
@@ -15,6 +35,18 @@
 
 	&__logo{
 		margin-bottom: 72px;
+		@media (max-width: $md2+px) {
+			margin-bottom: 32px;
+		}
+		@media (max-width: $md4+px) {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 12px;
+		}
+		@media (max-width: $md5+px) {
+			justify-content: flex-start;
+			margin-bottom: 0px;
+		}
 	}
 	&__right {
 		span {
@@ -25,7 +57,21 @@
 			line-height: 65px;
 			&:last-child{
 				padding-left: 30px;
+				@media (max-width: $md1+px) {
+					padding-left: 10px;
+				}
 			}
+			@media (max-width: $md4+px) {
+				font-size: 16px;
+				line-height: 16px;
+			}
+
+		}
+		@media (max-width: $md4+px) {
+		 text-align: center;
+		}
+		@media (max-width: $md5+px) {
+			text-align: left;
 		}
 	}
 	
@@ -56,7 +102,7 @@
 
 .nav-footer {
 
-margin-left: 100px;
+	margin-left: 100px;
 	&__wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -78,30 +124,45 @@ margin-left: 100px;
 			}
 		 }
 	}
+	@media (max-width: $md2+px) {
+	  display: none;
+	}
 }
 .policy-footer {
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: flex-end;
-	&__btn {
-		display: inline;
-		padding: 17px 87px 17px 87px;
-	}
-
-	&__text {
-	}
-	.nav {
-
-		&__policy {
-			color: #000000;
-			font-weight: 500;
-			&:after{
-				background-color: #000000;
-				bottom: 22px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+		&__btn {
+			display: inline;
+			padding: 17px 87px 17px 87px;
+			@media (max-width: $md4+px) {
+				padding: 10px 51px 10px 51px;
 			}
 		}
-	}
+
+		&__text {
+		}
+		.nav {
+
+			&__policy {
+				color: #000000;
+				font-weight: 500;
+				&:after{
+					background-color: #000000;
+					bottom: 22px;
+				}
+				@media (max-width: $md4+px) {
+				 margin-bottom: 5px;
+				}
+			}
+		}
+		@media (max-width: $md4+px) {
+			align-items: center;
+		}
+		@media (max-width: $md5+px) {
+			align-items: flex-start;
+		}
 }
 
 
