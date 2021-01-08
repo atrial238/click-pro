@@ -19,8 +19,22 @@
 		}
 
 	}
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
+	}
 
 	&__column {
+		position: relative;
+		z-index: 2;
 		flex: 0 1 25%;
 		@media (max-width: $md1+px) {
 			flex: 0 1 30%;
@@ -164,5 +178,3 @@
 			align-items: flex-start;
 		}
 }
-
-

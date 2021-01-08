@@ -15,8 +15,21 @@
 			padding-top: 15px;
 		}
 	}
-
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
+	}
 	&__title {
+		position: relative;
+		z-index: 2;
 		margin-bottom: 114px;
 		@media (max-width: $md1+px) {
 			margin-bottom: 90px;
@@ -37,6 +50,7 @@
 		justify-content: flex-end;
 		align-items: flex-end;
 		position: relative;
+		z-index: 2;
 		&:after{
 			content: '';
 			position: absolute;

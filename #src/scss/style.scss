@@ -72,13 +72,15 @@ body {
 	}
 	@media (max-width: $md3+px) {
 		max-width: none;
-		padding: 0 30px;
+		// padding: 0 30px;
+		margin: 0 20px;
 	}
 	@media (max-width: $md4+px) {
-		padding: 0 20px;
+		padding: 0px;
+		
 	}
 	@media (max-width: $md5+px) {
-		padding: 0 10px;
+		margin: 0 7px;
 	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================

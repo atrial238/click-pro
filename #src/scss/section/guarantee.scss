@@ -12,8 +12,22 @@
 			padding-top: 36px;
 		}
 	}
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
+	}
 
 	&__title {
+		position: relative;
+		z-index: 2;
 		margin-bottom: 62px;
 		@media (max-width: $md3+px) {
 			margin-bottom: 42px;
@@ -26,6 +40,8 @@
 	}
 
 	&__cards-guarantee {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		justify-content: space-between;
 		margin: 0 -15px;

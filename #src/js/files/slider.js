@@ -6,7 +6,7 @@ function slider () {
 		container: '.slider__wrapper',
 		items: 1,
 		slideBy: 1,
-		
+		// loop: false,
 		mouseDrag: true,
 		
 		prevButton: '.arrows__arrow_left',

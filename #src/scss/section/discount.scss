@@ -38,6 +38,16 @@
 		 display: none;
 		}
 	}
+	.lines {
+	
+		z-index: 1;
+		span {
+			height: 100%;
+			width: 1px;
+			background-color: #fff;
+			opacity: 0.05;
+		}
+	}
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -67,6 +77,8 @@
 		justify-content: flex-end;
 		align-items: center;
 		margin: 0 -30px;
+		position: relative;
+		z-index: 2;
 		@media (max-width: $md3+px) {
 			justify-content: flex-start;
 			margin: 0 -30px 20px -30px;

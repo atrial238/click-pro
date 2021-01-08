@@ -1,22 +1,28 @@
 .feedback {
 	background-color: #f2f1ff;
-	padding-bottom: 80px;
-	@media (max-width: $md4+px) {
-		padding-bottom: 40px;
-	}
-	@media (max-width: $md5+px) {
-		padding-bottom: 0px;
-	}
+	
 	._container {
-		max-width: 1600px;
+		
+	}
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
 	}
 	&__wrapper {
-		padding: 175px 20px 0 20px;
+		padding: 175px 20px 80px 20px;
 		@media (max-width: $md3+px) {
-			padding: 125px 20px 0 20px;
+			padding: 125px 20px 80px 20px;
 		}
 		@media (max-width: $md4+px) {
-			padding: 75px 0px 0 0px;
+			padding: 75px 0px 40px 0px;
 		}
 		@media (max-width: $md5+px) {
 			padding: 55px 0px 0 0px;
@@ -24,6 +30,8 @@
 	}
 
 	&__title {
+		position: relative;
+		z-index: 2;
 		margin: 0 0 82px 30px;
 		
 		@media (max-width: $md4+px) {
@@ -38,7 +46,20 @@
 
 	&__slider {
 		position: relative;
-		
+		z-index: 2;
+		margin: 0 -56px;
+		@media (max-width: $md1+px) {
+			margin: 0 -47px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0 -45px;
+		}
+		@media (max-width: $md4+px) {
+			margin: 0 -6px;
+		}
+		@media (max-width: $md5+px) {
+			margin: 0 -8px;
+		}
 	}
 	&__arrows {
 		@media (max-width: $md1+px) {

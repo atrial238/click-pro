@@ -35,8 +35,8 @@ if(window.innerWidth < 1580  ) {
 	}
 }
 
-// window.addEventListener('resize', function() {
-// location.reload();
-// });
+window.addEventListener('resize', function() {
+location.reload();
+});
 
 	

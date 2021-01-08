@@ -23,7 +23,7 @@ import alignHeigthCard from './files/sliderAlign';
 	slider();
 	timer();
 	menuAlign ();
-	// swiper();
+	
 	dynamicAdapt(1);
 	dynamicAdapt(2);
 	dynamicAdapt(3);

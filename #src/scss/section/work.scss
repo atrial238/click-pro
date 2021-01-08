@@ -1,19 +1,33 @@
 .work {
-	padding-top: 86px;
 	background-color: #f2f1ff;
-	@media (max-width: $md2+px) {
-		padding-top: 56px
-	}
-	@media (max-width: $md3+px) {
-		padding-top: 36px
-	}
-	@media (max-width: $md4+px) {
-		padding-top: 10px;
-	}
+	
 	&__wrapper {
+			padding-top: 86px;
+		@media (max-width: $md2+px) {
+			padding-top: 56px
+		}
+		@media (max-width: $md3+px) {
+			padding-top: 36px
+		}
+		@media (max-width: $md4+px) {
+			padding-top: 10px;
+		}
 	}
-
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
+	}
 	&__title {
+		position: relative;
+		z-index: 2;
 		padding-bottom: 57px;
 		@media (max-width: $md4+px) {
 			padding-bottom: 7px;
@@ -21,6 +35,8 @@
 	}
 
 	&__cards-work {
+		position: relative;
+		z-index: 2;
 	}
 }
 

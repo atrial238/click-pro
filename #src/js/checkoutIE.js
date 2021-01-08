@@ -46,5 +46,11 @@ window.addEventListener('DOMContentLoaded', function()  {
 			mainBody.appendChild(scriptMain);
 		};
 	};
+
+	// mainBody.appendChild(tinySlider);
+	
+	// 	tinySlider.onload = function() {
+	// 		mainBody.appendChild(scriptMain);
+	// 	};
 	
 });

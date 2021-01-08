@@ -1,5 +1,8 @@
 .about {
 	background-color: #f2f1ff;
+	
+	&__wrapper {
+		
 	padding-top: 100px;
 	@media (max-width: $md3+px) {
 		padding-top: 47px;
@@ -7,10 +10,24 @@
 	@media (max-width: $md5+px) {
 		padding-top: 18px;
 	}
-	&__wrapper {
+		
+	}
+	._container{
+		position: relative;
+		.lines {
+			z-index: 1;
+			span {
+				height: 100%;
+				width: 1px;
+				background-color: #212122;
+				opacity: 0.05;
+			}
+		}
 	}
 
 	&__title {
+		position: relative;
+		z-index: 2;
 		margin-bottom: 55px;
 		@media (max-width: $md3+px) {
 			margin-bottom: 30px;
@@ -20,6 +37,8 @@
 		}
 	}
 	&__cards {
+		position: relative;
+		z-index: 2;
 		display: flex;
 		justify-content: space-between;
 		margin: 0 -15px;
